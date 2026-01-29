@@ -130,9 +130,9 @@ export default function Testimonials() {
           )}
         </div>
 
-        {/* Real Google Reviews */}
+        {/* Real Google Reviews - filter out 1-star reviews */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeData.reviews.slice(0, 6).map((review, index) => (
+          {placeData.reviews.filter(review => review.rating >= 2).slice(0, 6).map((review, index) => (
             <div
               key={index}
               className="bg-gray-50 rounded-xl p-6 border border-gray-100"
